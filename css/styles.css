@@ -31,3 +31,7 @@ main {
 a {
 	color: black;
 }
+
+p {
+	margin-bottom: 0;
+}
