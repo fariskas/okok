@@ -32,7 +32,8 @@
   var saved_img;
 
 
-  // popup   array
+  var loaded = false;
+
   var ok_load_counter = 0;
   var ok_counter = 0
   var ok_images = ["./img/pop_ok_0.png", "./img/pop_ok_1.png", "./img/pop_ok_2.png", "./img/pop_ok_3.png", "./img/pop_ok_4.png", "./img/pop_ok_5.png", "./img/pop_ok_6.png"].map(src => {
@@ -40,20 +41,8 @@
     image.src = src;
     image.onload = function(){
       // console.log('hit')
-      if (ok_load_counter == 0) {
-        if (!window.innerWidth < 520) {
-            setTimeout(function(){ 
-              draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2), true)
-              console.log('loaded once inside')
-            }, 100);
-        } else {
-            setTimeout(function(){ 
-              draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2) + 100, true)
-              console.log('loaded once inside')
-            }, 100);
-        }
-        
-        $('.load').hide();
+      if (ok_load_counter > 3 && notok_load_counter > 2 && !loaded) {
+        load_complete()
       }
 
       ok_load_counter++;
@@ -71,6 +60,10 @@
     image.src = src;
     image.onload = function(){
 
+      if (ok_load_counter > 3 && notok_load_counter > 2 && !loaded) {
+        load_complete()
+      }
+
       notok_load_counter++;
       console.log('not ok loaded once', notok_load_counter)
 
@@ -78,6 +71,45 @@
 
     return image
   })
+
+
+  function load_complete() {
+
+      loaded = true;
+
+      console.log('LOAD COMPLETE')
+
+      if (!window.innerWidth < 520) {
+          setTimeout(function(){ 
+            draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2), true)
+            console.log('loaded once inside')
+          }, 100);
+      } else {
+          setTimeout(function(){ 
+            draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2) + 100, true)
+            console.log('loaded once inside')
+          }, 100);
+      }
+
+      $('.load').hide();
+      $('.news').show();
+      $('.main_text').show();
+
+
+      $('.marquee').marquee({
+        //speed in milliseconds of the marquee
+        duration: 7000,
+        //gap in pixels between the tickers
+        gap: 50,
+        //time in milliseconds before the marquee will start animating
+        delayBeforeStart: 0,
+        //'left' or 'right'
+        direction: 'left',
+        //true or false - should the marquee be duplicated to show an effect of continues flow
+        duplicated: true,
+        startVisible:false
+      });
+  }
 
 
   /// on canvas click
@@ -180,19 +212,7 @@
   };
 
 
-  $('.marquee').marquee({
-    //speed in milliseconds of the marquee
-    duration: 7000,
-    //gap in pixels between the tickers
-    gap: 50,
-    //time in milliseconds before the marquee will start animating
-    delayBeforeStart: 0,
-    //'left' or 'right'
-    direction: 'left',
-    //true or false - should the marquee be duplicated to show an effect of continues flow
-    duplicated: true,
-    startVisible:false
-});
+
 
 
 

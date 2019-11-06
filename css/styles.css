@@ -98,6 +98,7 @@ canvas#canvas_fresh {
   /*width: 100%;*/
   z-index: 5;
   text-shadow: 2px 2px 0px #f8bfc1;
+  display: none;
 }
 .main_text span{
   line-height: 2.3
@@ -130,6 +131,7 @@ img.arrow {
     border: 2px solid;
     background: white;
     z-index: 5;
+    display: none;
 }
 .news .inner {
   position: relative;
