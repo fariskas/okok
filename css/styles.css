@@ -103,7 +103,20 @@ canvas#canvas_fresh {
   line-height: 2.3
 }
 
-
+img.at {
+    width: 10px;
+    position: relative;
+    top: 0;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+img.arrow {
+    width: 6px;
+    position: relative;
+    top: -1px;
+    margin-left: 2px;
+    margin-right: 10px;
+}
 
 /*** MARQUEE ***/
 
@@ -197,7 +210,7 @@ canvas#canvas_fresh {
   }
   .links {
       margin-top: 5px;
-      margin-left: 10px;
+      margin-left: 0px;
   }
   .news {
     top: auto;
@@ -207,7 +220,12 @@ canvas#canvas_fresh {
     bottom: 20px;
     width: calc(100% - 40px);
   }
-
+  img.at {
+    width: 9px;
+    margin-left: 3px;
+  }
+  img.arrow{
+    top: 0;
 
 }
 
