@@ -41,7 +41,7 @@
     image.src = src;
     image.onload = function(){
       // console.log('hit')
-      if (ok_load_counter > 3 && notok_load_counter > 2 && !loaded) {
+      if (ok_load_counter > 2 && notok_load_counter > 2 && !loaded) {
         load_complete()
       }
 
@@ -60,7 +60,7 @@
     image.src = src;
     image.onload = function(){
 
-      if (ok_load_counter > 3 && notok_load_counter > 2 && !loaded) {
+      if (ok_load_counter > 2 && notok_load_counter > 2 && !loaded) {
         load_complete()
       }
 
