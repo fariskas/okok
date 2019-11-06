@@ -31,7 +31,7 @@ html, body {
   padding:0;
 }
 body {
-  font-family: 'MT';
+  font-family: 'MT', sans-serif;
   font-size: 14px;
   color: #090909;
   background-color: #F8BEC1;
