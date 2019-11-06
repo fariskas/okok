@@ -44,10 +44,12 @@
         if (!window.innerWidth < 520) {
             setTimeout(function(){ 
               draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2), true)
+              console.log('loaded once inside')
             }, 100);
         } else {
             setTimeout(function(){ 
               draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2) + 100, true)
+              console.log('loaded once inside')
             }, 100);
         }
         load_counter++;
