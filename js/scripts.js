@@ -42,9 +42,13 @@
       // console.log('hit')
       if (load_counter == 0) {
         if (!window.innerWidth < 520) {
-          draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2), true)
+            setTimeout(function(){ 
+              draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2), true)
+            }, 100);
         } else {
-          draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2) + 100, true)
+            setTimeout(function(){ 
+              draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2) + 100, true)
+            }, 100);
         }
         load_counter++;
         console.log('loaded once')
