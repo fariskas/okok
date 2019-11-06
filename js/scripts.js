@@ -33,14 +33,14 @@
 
 
   // popup   array
-  var load_counter = 0;
+  var ok_load_counter = 0;
   var ok_counter = 0
   var ok_images = ["./img/pop_ok_0.png", "./img/pop_ok_1.png", "./img/pop_ok_2.png", "./img/pop_ok_3.png", "./img/pop_ok_4.png", "./img/pop_ok_5.png", "./img/pop_ok_6.png"].map(src => {
     var image = document.createElement("img")
     image.src = src;
     image.onload = function(){
       // console.log('hit')
-      if (load_counter == 0) {
+      if (ok_load_counter == 0) {
         if (!window.innerWidth < 520) {
             setTimeout(function(){ 
               draw_once( window.innerWidth - (pop_w/2), window.innerHeight - (pop_h/2), true)
@@ -56,18 +56,26 @@
         $('.load').hide();
       }
 
-      load_counter++;
-      console.log('loaded once', load_counter)
+      ok_load_counter++;
+      console.log('loaded once', ok_load_counter)
 
     }
     
     return image
   })
 
+  var notok_load_counter = 0;
   var notok_counter = 0
   var notok_images = ["./img/pop_notok_0.png", "./img/pop_notok_1.png", "./img/pop_notok_2.png", "./img/pop_notok_3.png", "./img/pop_notok_4.png",].map(src => {
     var image = document.createElement("img")
-    image.src = src
+    image.src = src;
+    image.onload = function(){
+    
+      notok_load_counter++;
+      console.log('loaded once', notok_load_counter)
+
+    }
+
     return image
   })
 
