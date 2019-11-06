@@ -53,7 +53,7 @@
             }, 100);
         }
         load_counter++;
-        console.log('loaded once')
+        console.log('loaded once', load_counter)
         $('.load').hide();
       }
 
