@@ -57,7 +57,7 @@
       }
 
       ok_load_counter++;
-      console.log('loaded once', ok_load_counter)
+      console.log('ok loaded once', ok_load_counter)
 
     }
     
@@ -70,9 +70,9 @@
     var image = document.createElement("img")
     image.src = src;
     image.onload = function(){
-    
+
       notok_load_counter++;
-      console.log('loaded once', notok_load_counter)
+      console.log('not ok loaded once', notok_load_counter)
 
     }
 
