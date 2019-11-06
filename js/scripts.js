@@ -52,10 +52,12 @@
               console.log('loaded once inside')
             }, 100);
         }
-        load_counter++;
-        console.log('loaded once', load_counter)
+        
         $('.load').hide();
       }
+
+      load_counter++;
+      console.log('loaded once', load_counter)
 
     }
     
